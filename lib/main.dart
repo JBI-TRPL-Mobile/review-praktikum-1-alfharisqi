@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:template_project/halaman_detail.dart';
 import 'package:template_project/halaman_utama.dart';
 
 void main() {
@@ -20,8 +19,6 @@ class MyApp extends StatelessWidget {
      initialRoute: '/',
       routes: {
         '/' : (context) => HalamanUtama(),
-        '/detail' : context => HalamanDetail(),
-    '/detail' : context => HalamanDetail(),
       },
     );
   }
