@@ -40,7 +40,7 @@ class HalamanUtama extends StatelessWidget {
           children: [
             ListTile(title: Text('Tentang Aplikasi'),
             onTap: (){
-              Navigator.pushNamed(context, '/about');
+              Navigator.pushNamed(context, '/about')
             },
             )
           ],
