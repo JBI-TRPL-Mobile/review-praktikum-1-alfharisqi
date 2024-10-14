@@ -3,22 +3,30 @@ import 'package:flutter/material.dart';
 class HalamanUtama extends StatelessWidget {
   final List<Map<String, String>> buku = [
     {
-      'judul' : 'Flutter Basic',
-      'penulis' : 'John Doe',
-      'deskripsi' : 'A comprehensive guide for flutter development.'
+      'judul': 'Flutter Basic',
+      'penulis': 'John Doe',
+      'gambar' : 'foto/bukuflutterbasic.jpg'
     },
     {
-      'judul' : 'Dart Mastery',
-      'penulis' : 'John Doe',
-      'deskripsi' : 'A comprehensive guide for flutter development.'
-    }
+      'judul': 'Dart Mastery',
+      'penulis': 'Jane Doe',
+      'gambar' : 'foto/bukumasterydart.jpg'
+    },
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Daftar Buku'),
+        title: const Text('Daftar Buku'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.info),
+            onPressed: () {
+              Navigator.pushNamed(context, '/tentang');
+            },
+          ),
+        ],
       ),
       body: ListView.builder(
         itemCount: buku.length,
@@ -29,22 +37,11 @@ class HalamanUtama extends StatelessWidget {
               Navigator.pushNamed(
                 context,
                 '/detail',
-                  arguments: buku[index]
+                arguments: buku[index],
               );
             },
           );
         },
-      ),
-      drawer: Drawer(
-        child: ListView(
-          children: [
-            ListTile(title: Text('Tentang Aplikasi'),
-            onTap: (){
-              Navigator.pushNamed(context, '/about')
-            },
-            )
-          ],
-        ),
       ),
     );
   }
