@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => HalamanUtama(),
         '/detail': (context) => HalamanDetail(),
-        '/tentang' : (context) => TentangAplikasi()
+        '/tentang' : (context) => Ten()
       },
     );
   }
