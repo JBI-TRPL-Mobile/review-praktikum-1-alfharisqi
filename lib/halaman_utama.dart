@@ -3,10 +3,14 @@ import 'package:flutter/material.dart';
 class HalamanUtama extends StatelessWidget {
   final List<Map<String, String>> buku = [
     {
-      'judul' : 'Flutter Basic'
+      'judul' : 'Flutter Basic',
+      'penulis' : 'John Doe',
+      'deskripsi' : 'A comprehensive guide for flutter development.'
     },
     {
-      'judul' : 'Dart Mastery'
+      'judul' : 'Dart Mastery',
+      'penulis' : 'John Doe',
+      'deskripsi' : 'A comprehensive guide for flutter development.'
     }
   ];
 
@@ -22,14 +26,25 @@ class HalamanUtama extends StatelessWidget {
           return ListTile(
             title: Text(buku[index]['judul']!),
             onTap: () {
-              Navigation.pushNamed(
+              Navigator.pushNamed(
                 context,
                 '/detail',
-                  argument: buku[index]
+                  arguments: buku[index]
               );
             },
           );
         },
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: [
+            ListTile(title: Text('Tentang Aplikasi'),
+            onTap: (){
+              Navigator.pushNamed(context, '/about');
+            },
+            )
+          ],
+        ),
       ),
     );
   }
